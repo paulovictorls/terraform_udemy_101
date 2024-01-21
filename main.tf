@@ -14,13 +14,13 @@ module "myapp-subnet" {
 }
 
 module "myapp-server" {
-  source              = "./modules/webserver"
-  vpc_id              = aws_vpc.myapp-vpc.id
-  image_name          = var.image_name
-  instance_type       = var.instance_type
-  my_ip               = var.my_ip
-  subnet_id           = module.myapp-subnet.subnet.id
-  env_prefix          = var.env_prefix
-  availability_zone   = var.availability_zone
-  public_key_location = var.public_key_location
+  source            = "./modules/webserver"
+  vpc_id            = aws_vpc.myapp-vpc.id
+  image_name        = var.image_name
+  instance_type     = var.instance_type
+  my_ip             = var.my_ip
+  subnet_id         = module.myapp-subnet.subnet.id
+  env_prefix        = var.env_prefix
+  availability_zone = var.availability_zone
+  public_key        = var.public_key
 }
